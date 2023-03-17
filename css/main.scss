@@ -964,11 +964,12 @@ $baseurl: '{{ site.baseurl }}/images';
 	.spotlight {
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
-		background-size: 256px 256px, cover;
+		//background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 		justify-content: flex-end;
 		box-sizing: inherit;
+		height: 100vh;
 
 		.image {
 			@include vendor('order', '1');
