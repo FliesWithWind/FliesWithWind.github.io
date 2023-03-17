@@ -1338,7 +1338,6 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		&.style1 {
 			//@include wrapper(accent1);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/test_image.png")'));
 			position: relative;
 			height: 100vh;
 			justify-content: center;
