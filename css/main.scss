@@ -972,11 +972,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		height: 96vh;
 		position: relative;
 
-
-		.box_left{
-			justify-content: flex-end;
-		}
-
 		.image {
 			@include vendor('order', '1');
 			border-radius: 0;
@@ -1087,6 +1082,10 @@ $baseurl: '{{ site.baseurl }}/images';
 				@include padding(3em, 2em);
 			}
 		}
+	}
+
+	.box_left{
+		justify-content: flex-end;
 	}
 
 /* Wrapper */
