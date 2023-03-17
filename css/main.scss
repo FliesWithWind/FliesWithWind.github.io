@@ -1340,6 +1340,13 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.style4 {
 			background-color: transparent;
 			height: 70vh;
+			position: relative;
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
 		}
 
 		&.style5 {
