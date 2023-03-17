@@ -969,7 +969,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		background-position: top left, center center;
 		justify-content: flex-end;
 		box-sizing: inherit;
-		height: 100vh;
+		height: 96vh;
 		position: relative;
 
 		.image {
@@ -1314,7 +1314,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			//@include wrapper(accent1);
 			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/test_image.png")'));
 			position: relative;
-			height: 100vh;
+			height: 96vh;
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
@@ -1600,7 +1600,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-		height: 100vh;
+		height: 96vh;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
