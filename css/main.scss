@@ -968,7 +968,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		.image {
 			@include vendor('order', '1');
 			border-radius: 0;
-			width: 40%;
+			width: 100%;
 
 			img {
 				border-radius: 0;
