@@ -1325,6 +1325,12 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		&.style2 {
 			background-color: _palette(bg);
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
+			background-size:     cover;                      /* <------ */
+			background-repeat:   no-repeat;
+			background-position: center center; 
 		}
 
 		&.style3 {
