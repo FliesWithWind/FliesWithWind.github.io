@@ -1,0 +1,31 @@
+# Site settings
+title: Strefa Gier
+email: strefagier.com.pl@gmail.com
+description: Strefa Gier <br>
+             Arama 3, Minecraft, Valheim
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://flieswithwind.github.io/" # the base hostname & protocol for your site
+
+# Homepage tiles
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 3
+
+# Misc settings
+featured-image-source:
+
+# Social settings
+500px_url:
+facebook_url:
+github_url:
+gitlab_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+pinterest_url:
+slack_url:
+twitter_url:
+email_url:
+
+# Build settings
+markdown: kramdown
+
