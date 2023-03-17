@@ -1088,12 +1088,25 @@ $baseurl: '{{ site.baseurl }}/images';
 		justify-content: flex-end;
 	}
 
+	.arma {
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/test_image.jpg")'));
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center; 
+	}
+
 	.minecraft {
 		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/minecraft.jpg")'));
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center; 
 	}
 
 	.factorio {
 		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/factorio.jpg")'));
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center; 
 	}
 
 /* Wrapper */
@@ -1291,6 +1304,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		> .inner {
 			width: 60em;
 			margin: 0 auto;
+			text-align: center;
 
 			@include breakpoint(large) {
 				width: 90%;
@@ -1330,9 +1344,6 @@ $baseurl: '{{ site.baseurl }}/images';
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
-			background-size:     cover;                      /* <------ */
-			background-repeat:   no-repeat;
-			background-position: center center; 
 		}
 
 		&.style2 {
@@ -1340,9 +1351,6 @@ $baseurl: '{{ site.baseurl }}/images';
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
-			background-size:     cover;                      /* <------ */
-			background-repeat:   no-repeat;
-			background-position: center center; 
 		}
 
 		&.style3 {
@@ -1772,7 +1780,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		.inner {
 			@include vendor('display', 'flex');
 			max-width: 45em;
-			text-align: center;
 
 			header {
 				@include vendor('order', '1');
