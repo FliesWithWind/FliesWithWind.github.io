@@ -1358,7 +1358,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		&.style4 {
 			background-color: transparent;
-			height: 70vh;
+			height: 75vh;
 			position: relative;
 			justify-content: center;
 			display: flex;
@@ -1639,7 +1639,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-		height: 95vh;
+		height: 100vh;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
