@@ -1311,9 +1311,12 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		&.style1 {
-			@include wrapper(accent1);
+			//@include wrapper(accent1);
 			position: relative;
 			height: 100vh;
+			justify-content: center;
+			display: flex;
+			flex-direction: column;
 		}
 
 		&.style2 {
@@ -1321,7 +1324,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		&.style3 {
-			@include wrapper(accent5);
+			//@include wrapper(accent5);
 		}
 
 		&.style4 {
@@ -1329,7 +1332,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		&.style5 {
-			@include wrapper(accent7);
+			//@include wrapper(accent7);
 		}
 
 		@include breakpoint(medium) {
