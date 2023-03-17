@@ -1,34 +1,58 @@
+# Welcome to Jekyll!
+#
+
 # Site settings
-title: Geohackweek
-email: arendta@uw.edu
-url: https://geohackweek.github.io
-description: "A workshop and hackathon in geospatial data science at the University of Washington eScience Institute"
-encoding: UTF-8
-
-# Google services
-google_analytics: UA—77504214-2
-
-# Color settings (hex-codes without the leading hash-tag)
-color:
-  primary-dark: '#444444'
-  links: '#e8e3d3'
-
-# Footer settings
-footer: Arendt, Anthony UW eScience Institute
-
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+title: Strefa Gier
+description: |
+  Strona polskiej społeczności gamingowej  
+  Streafa Gier
+owner: Strefa Gier # or company name
+first_published: 1996 # if migrating another site, the year of your first publish
+email: streafgiercompl@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://flieswithwind.github.io" # the base hostname & protocol for your site
 social:
-  - title: twitter
-    url: https://twitter.com/search?q=%23geohackweek&src=typd
-  #- title: facebook
-  #  url:
-  #- title: stack-overflow
-  #  url: http://stackoverflow.com/questions/tagged/jekyll
-  #- title: bitbucket
-  #  url: http://bitbucket.org/jekyll
-  - title: github
-    url: https://github.com/geohackweek
+  # twitter: https://twitter.com/<username>
+  # github: https://github.com/<username>
+  # linkedin-square: https://linkedin.com/in/<username>
+  # facebook-official: https://facebook.com/<username>
+  # google-plus-square: https://plus.google.com/u/0/+<username>
+  #email: /contact/
+  #flickr:
+  #instagram:
+  #youtube-square:
+  #spotify:
+  #stack-overflow:
+  #vimeo:
+  #reddit:
+  #stubleupon:
+  #delicious:
+  #pied-piper:
+  #digg:
+  #soundcloud:
+  #deviantart:
+  #angellist:
+  #tumblr-square:
+  #stackexchange:
+  #weibo:
+  #trello:
+  #foursquare:
+  #linux:
+  #bitbucket-square:
+  #vk:
+  #slack:
+  #vine:
+  #weixin:
+  #yelp:
+  #skyatlas:
+  #leanpub:
+  #connectdevelop:
+  #ils:
+  #forumbee:
+  #tripadvisor:
+  #amazon:
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+#sass:
+#  style: compressed

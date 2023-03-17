@@ -1,24 +1,27 @@
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-              <div class="row">
-                <a href="http://escience.washington.edu"><image src="img/eScience_Logo_PMS.png" width=300></a>
-
-                <a href="http://www.moore.org"><image src="img/MooreFdn.png" width=200></a>
-
-                <a href="http://sloan.org"><image src="img/SloanLogo.png" width=200></a>
-
-                <a href="http://www.cfr.washington.edu/"><image src="img/sefslogo.jpg" width=200></a>
-
-                 <a href="https://www.engr.washington.edu/"><image src="img/engineering.jpg" width=200></a>
-
-                 <a href="http://www.apl.washington.edu/"><image src="img/apl_logo_blue.jpg" width=75></a>
-            </div>
-            <br />
-            <div class="row">
-                <p>Copyright &copy; {{ site.footer }} 20{{ site.time | date: '%y' }}</p>
-                <p></p>
-                <p>Images copyright <a href="http://stoncel.com"><image src="img/stoncel.jpg" width=100></a></p>
-            </div>
-        </div>  
-    </footer>
+<!-- Footer -->
+<footer id="footer">
+  <ul class="icons">
+    {% for socloc in site.social %}
+    {% if socloc[1] %}
+    {% if socloc[0] == 'email' %}
+    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope-o"
+           ><span class="label">E-mail</span></a></li>
+    {% else %}
+    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
+           ><span class="label">{{ socloc[0] }}</span></a></li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <ul class="copyright">
+    <li>&copy; {% assign thisyear = site.time | date: "%Y" %}
+    {% if site.first_published %}
+      {% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
+      {% if diff contains '-' %}{{ site.first_published }},{% endif %}
+    {% endif %}
+    {{ thisyear }}
+    {% if site.owner %}{{ site.owner }}{% else %}{{ site.title }}{% endif %}</li>
+    <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+    <li>Built with: <a href="http://jekyllrb.com" target="_blank">Jekyll</a></li>
+  </ul>
+</footer>
