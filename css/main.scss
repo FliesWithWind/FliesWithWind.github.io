@@ -969,7 +969,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		background-position: top left, center center;
 		//justify-content: flex-end;
 		box-sizing: inherit;
-		height: 95vh;
+		height: 97vh;
 		position: relative;
 
 		.image {
@@ -1339,7 +1339,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.style1 {
 			//@include wrapper(accent1);
 			position: relative;
-			height: 95vh;
+			height: 97vh;
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
