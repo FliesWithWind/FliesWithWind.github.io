@@ -1,31 +1,34 @@
 # Site settings
-title: Strefa Gier
-email: strefagier.com.pl@gmail.com
-description: Strefa Gier <br>
-             Arama 3, Minecraft, Valheim
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://flieswithwind.github.io/" # the base hostname & protocol for your site
+title: Geohackweek
+email: arendta@uw.edu
+url: https://geohackweek.github.io
+description: "A workshop and hackathon in geospatial data science at the University of Washington eScience Institute"
+encoding: UTF-8
 
-# Homepage tiles
-tiles-source: posts # accepts "posts" or "pages"
-tiles-count: 3
+# Google services
+google_analytics: UA—77504214-2
 
-# Misc settings
-featured-image-source:
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary-dark: '#444444'
+  links: '#e8e3d3'
 
-# Social settings
-500px_url:
-facebook_url:
-github_url:
-gitlab_url:
-googleplus_url:
-instagram_url:
-linkedin_url:
-pinterest_url:
-slack_url:
-twitter_url:
-email_url:
+# Footer settings
+footer: Arendt, Anthony UW eScience Institute
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: twitter
+    url: https://twitter.com/search?q=%23geohackweek&src=typd
+  #- title: facebook
+  #  url:
+  #- title: stack-overflow
+  #  url: http://stackoverflow.com/questions/tagged/jekyll
+  #- title: bitbucket
+  #  url: http://bitbucket.org/jekyll
+  - title: github
+    url: https://github.com/geohackweek
 
 # Build settings
 markdown: kramdown
-
+permalink: pretty
