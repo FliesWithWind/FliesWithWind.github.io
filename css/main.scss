@@ -441,7 +441,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	.box {
 		border-radius: 3px;
-		border: solid 2px _palette(border);
+		//border: solid 2px _palette(border);
 		margin-bottom: _size(element-margin);
 		padding: 1.5em;
 
