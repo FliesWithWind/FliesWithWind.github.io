@@ -1600,7 +1600,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-		height: 96vh;
+		height: 100vh;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
