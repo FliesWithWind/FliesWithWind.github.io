@@ -1525,10 +1525,7 @@ $baseurl: '{{ site.baseurl }}/images';
 	.move {
 		@include vendor('transition', ('transform 0.75s ease', 'opacity 0.75s ease'));
 		@include vendor('transition-delay', '3.5s');
-		//@include vendor('transform', 'translateY(0)');
-		@include vendor('transform', 'translateX(20em)');
-		@include vendor('transition', 'transform #{_duration(menu)} ease');
-		-webkit-overflow-scrolling: touch;
+		@include vendor('transform', 'translateY(0)');
 	}
 
 /* Header */
