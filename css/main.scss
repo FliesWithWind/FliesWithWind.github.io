@@ -989,7 +989,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			@include vendor('order', '2');
 			//max-width: 48em;
 			max-width: calc(100% - 4em);
-			//width: 60%;
+			width: 40%;
 		}
 
 		.box {
