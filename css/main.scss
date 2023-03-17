@@ -1280,7 +1280,6 @@ $baseurl: '{{ site.baseurl }}/images';
 			width: 60em;
 			margin: 0 auto;
 			height: 100vh;
-			position: relative;
 
 			@include breakpoint(large) {
 				width: 90%;
@@ -1297,6 +1296,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		&.style1 {
 			@include wrapper(accent1);
+			position: relative;
 		}
 
 		&.style2 {
