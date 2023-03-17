@@ -967,10 +967,15 @@ $baseurl: '{{ site.baseurl }}/images';
 		//background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
-		justify-content: flex-end;
+		//justify-content: flex-end;
 		box-sizing: inherit;
 		height: 96vh;
 		position: relative;
+
+
+		.box_left{
+			justify-content: flex-end;
+		}
 
 		.image {
 			@include vendor('order', '1');
@@ -1760,6 +1765,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		.inner {
 			@include vendor('display', 'flex');
 			max-width: 45em;
+			text-align: center;
 
 			header {
 				@include vendor('order', '1');
