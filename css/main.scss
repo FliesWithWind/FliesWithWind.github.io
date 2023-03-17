@@ -1318,8 +1318,9 @@ $baseurl: '{{ site.baseurl }}/images';
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
-			background-repeat: no-repeat;
-			background-size: cover;
+			background-size:     cover;                      /* <------ */
+			background-repeat:   no-repeat;
+			background-position: center center; 
 		}
 
 		&.style2 {
