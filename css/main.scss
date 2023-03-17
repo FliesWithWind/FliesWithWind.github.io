@@ -159,7 +159,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	hr {
 		border: 0;
-		border-bottom: solid 2px _palette(border);
+		//border-bottom: solid 2px _palette(border);
 		margin: (_size(element-margin) * 1.5) 0;
 
 		&.major {
@@ -242,7 +242,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			margin: 0 0 (_size(element-margin) * 1.75) 0;
 
 			h2, h3, h4, h5, h6 {
-				border-bottom: solid 2px _palette(border);
+				//border-bottom: solid 2px _palette(border);
 				display: inline-block;
 				padding-bottom: 1em;
 				position: relative;
