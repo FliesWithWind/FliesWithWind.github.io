@@ -1018,6 +1018,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			text-transform: uppercase;
 			width: 16em;
 			z-index: 1;
+			position: absolute;
 
 			&:after {
 				background-image: url('images/arrow.svg');
@@ -1030,7 +1031,6 @@ $baseurl: '{{ site.baseurl }}/images';
 				height: 1.5em;
 				left: 50%;
 				margin: 0 0 0 -0.75em;
-				position: absolute;
 				width: 1.5em;
 			}
 		}
@@ -1278,6 +1278,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		> .inner {
 			width: 60em;
 			margin: 0 auto;
+			height: 100vh;
 
 			@include breakpoint(large) {
 				width: 90%;
