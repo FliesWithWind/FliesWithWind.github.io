@@ -39,10 +39,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		width: device-width;
 	}
 
-	html {
-		height: 100%;
-	}
-
 	body {
 		background: _palette(bg);
 
@@ -1343,7 +1339,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.style1 {
 			//@include wrapper(accent1);
 			position: relative;
-			//height: 97vh;
+			height: 97vh;
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
@@ -1354,7 +1350,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
-			//height: 97vh;
+			height: 97vh;
 		}
 
 		&.style3 {
@@ -1647,7 +1643,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-		//height: 100vh;
+		height: 100vh;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
