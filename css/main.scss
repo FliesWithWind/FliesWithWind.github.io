@@ -1288,6 +1288,22 @@ $baseurl: '{{ site.baseurl }}/images';
 			@include breakpoint(medium) {
 				width: 100%;
 			}
+
+			.content {
+				//@include padding(2em, 4em);
+				//@include 
+				padding: (3.5em 2.5em 3.5em 2.5em);
+				@include vendor('order', '2');
+				//max-width: 48em;
+				max-width: calc(100% - 4em);
+				width: 40%;
+			}
+	
+			.box {
+				background-color: rgb(24, 26, 27);
+				background-image: none;
+				color: rgb(190, 185, 176);
+			}
 		}
 
 		&.alt {
