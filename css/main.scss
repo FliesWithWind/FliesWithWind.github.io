@@ -969,7 +969,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		background-position: top left, center center;
 		//justify-content: flex-end;
 		box-sizing: inherit;
-		height: 97vh;
 		position: relative;
 
 		.image {
@@ -1350,6 +1349,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			justify-content: center;
 			display: flex;
 			flex-direction: column;
+			height: 97vh;
 		}
 
 		&.style3 {
