@@ -4,20 +4,20 @@
 
 	text-decoration: none;
 
-	&:before {
+	// &:before {
 
-		@if $content {
-			content: $content;
-		}
+	// 	@if $content {
+	// 		content: $content;
+	// 	}
 
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		font-family: "Font Awesome 6 Free", "Font Awesome 5 Brands";
-		font-style: normal;
-		font-weight: 400;
-		text-transform: none !important;
+	// 	-moz-osx-font-smoothing: grayscale;
+	// 	-webkit-font-smoothing: antialiased;
+	// 	font-family: "Font Awesome 6 Free", "Font Awesome 5 Brands";
+	// 	font-style: normal;
+	// 	font-weight: 400;
+	// 	text-transform: none !important;
 
-	}
+	// }
 
 }
 
