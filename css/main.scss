@@ -1279,7 +1279,6 @@ $baseurl: '{{ site.baseurl }}/images';
 		> .inner {
 			width: 60em;
 			margin: 0 auto;
-			height: 100vh;
 
 			@include breakpoint(large) {
 				width: 90%;
@@ -1299,11 +1298,12 @@ $baseurl: '{{ site.baseurl }}/images';
 				width: 40%;
 			}
 	
-			.box {
-				background-color: rgb(24, 26, 27);
-				background-image: none;
-				color: rgb(190, 185, 176);
-			}
+		}
+
+		.box {
+			background-color: rgb(24, 26, 27);
+			background-image: none;
+			color: rgb(190, 185, 176);
 		}
 
 		&.alt {
@@ -1313,6 +1313,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.style1 {
 			@include wrapper(accent1);
 			position: relative;
+			height: 100vh;
 		}
 
 		&.style2 {
