@@ -1093,8 +1093,15 @@ $baseurl: '{{ site.baseurl }}/images';
 		text-align: center;
 	}
 
-	.arma {
+	.about {
 		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/test_image.png")'));
+		background-size:     cover;                      /* <------ */
+		background-repeat:   no-repeat;
+		background-position: center center; 
+	}
+
+	.arma {
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/arma.jpg")'));
 		background-size:     cover;                      /* <------ */
 		background-repeat:   no-repeat;
 		background-position: center center; 
