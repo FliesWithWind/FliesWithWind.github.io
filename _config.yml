@@ -7,7 +7,7 @@ description: |
   Strona polskiej społeczności gamingowej  
   Strefa Gier
 owner: Strefa Gier # or company name
-first_published: 1996 # if migrating another site, the year of your first publish
+first_published: 2001 # if migrating another site, the year of your first publish
 email: streafgiercompl@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://strefagier.com.pl" # the base hostname & protocol for your site
