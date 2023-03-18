@@ -1088,6 +1088,11 @@ $baseurl: '{{ site.baseurl }}/images';
 		justify-content: flex-end;
 	}
 
+	.box_center{
+		justify-content: center;
+		text-align: center;
+	}
+
 	.arma {
 		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/test_image.png")'));
 		background-size:     cover;                      /* <------ */
