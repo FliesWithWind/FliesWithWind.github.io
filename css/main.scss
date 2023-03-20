@@ -1101,7 +1101,7 @@ $baseurl: '{{ site.baseurl }}/images';
 	}
 
 	.arma {
-		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/arma.jpg")'));
+		@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/arma3.jpg")'));
 		background-size:     cover;                      
 		background-repeat:   no-repeat;
 		background-position: center center; 
