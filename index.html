@@ -65,7 +65,7 @@ layout: landing
 						<div class="content box">
 							<h2>Factorio</h2>
 							<p>Zapraszamy na nasz server Factorio. Szczegóły na discordzie.</p>
-							<p>
+							<p> {{site.data.factorio}}
 								{% for server in site.data.factorio %}
 									{% if /(.+) from server.name (.+)/.match('[PL] Factorio | StrefaGier.com.pl') %}
 										{{server.name}}
