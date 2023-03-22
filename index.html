@@ -64,7 +64,14 @@ layout: landing
 					<section class="spotlight background box_left factorio">
 						<div class="content box">
 							<h2>Factorio</h2>
-							<p>Dla zainteresowanych, mamy zamknięty serwer Factorio. Szczegóły na discordzie.</p>
+							<p>Zapraszamy na nasz server Factorio. Szczegóły na discordzie.</p>
+							<p>
+								{% for server in site.data.factorio %}
+									if /(.+) from server.name (.+)/.match('[PL] Factorio | StrefaGier.com.pl')
+										{{server.name}}
+									end
+								{% endfor %}	
+							</p>
 						</div>
 						<!-- <div class="image"><img src="images/pic01.jpg" alt="" />
 							

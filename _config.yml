@@ -58,3 +58,7 @@ social:
 markdown: kramdown
 #sass:
 #  style: compressed
+
+jekyll_get:
+  data: factorio
+  json: 'https://api.dservindex.com/servers?has_password=false&has_mods=any&game_version=any&orderby=players&direction=desc&search=StrefaGier'
