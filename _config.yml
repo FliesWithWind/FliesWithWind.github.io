@@ -61,4 +61,4 @@ markdown: kramdown
 
 jekyll_get:
   data: factorio
-  json: 'https://api.dservindex.com/servers?has_password=false&has_mods=any&game_version=any&orderby=players&direction=desc&search=StrefaGier'
+  json: 'https://api.dservindex.com/servers?has_password=false&has_mods=true&game_version=1.1.76&orderby=players&direction=desc&search=StrefaGier.com.pl'
