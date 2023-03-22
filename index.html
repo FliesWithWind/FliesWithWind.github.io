@@ -67,9 +67,9 @@ layout: landing
 							<p>Zapraszamy na nasz server Factorio. Szczegóły na discordzie.</p>
 							<p>
 								{% for server in site.data.factorio %}
-									if /(.+) from server.name (.+)/.match('[PL] Factorio | StrefaGier.com.pl')
+									{% if /(.+) from server.name (.+)/.match('[PL] Factorio | StrefaGier.com.pl') %}
 										{{server.name}}
-									end
+									{% end %}
 								{% endfor %}	
 							</p>
 						</div>
