@@ -2,21 +2,22 @@ nav {
     transition: all 0.12s linear;
     background: #00000071;
 }
-#section_welcome {
+#section_welcome, #section_contact, #section_servers {
     background: url(./images/sg_mix.jpg) #00000071;
 }
 .self_discordBtn {
-    background-color: #5a6eb9;
+    background: #7289DA;
     text-decoration: none;
     color: #fff;
+    transition: all 0.15s linear;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .self_discordBtn:hover {
-    background-color: #7289dd;
+    background: #8099f5;
 }
 .self_welcomeAnimationEl {
     opacity: 0;
-    transition: opacity 2s ease-in;
+    transition: all 2s ease-in;
 }
 #section_about {
     background: url(./images/arma.jpg) #00000071;
@@ -30,10 +31,7 @@ nav {
 #section_warthunder {
     background: url(./images/warthunder.jpg) #00000071;
 }
-#section_contact {
-    background: url(./images/sg_mix.jpg) #00000071;
-}
-#section_welcome, #section_about, #section_arma3, #section_cs, #section_warthunder, #section_contact {
+#section_welcome, #section_about, #section_arma3, #section_cs, #section_warthunder, #section_contact, #section_servers {
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: cover;
@@ -47,11 +45,15 @@ nav {
     user-select: none;
     font-size: x-large;
     font-family: monospace;
-    text-underline-offset: 5px;
-    text-decoration: underline;
+    border: 1px solid #3d444b;
+    border-radius: 6px;
+    padding: 10px;
+    color: #c7c7c7;
+    text-decoration: none;
     transition: all 0.12s linear;
 }
 #wt_squadron:hover {
+    color: #e4e4e4;
     margin-left: 5px;
 }
 .self_otherGame {
@@ -76,6 +78,9 @@ footer {
 .self_largeIcon {
     width: 2rem !important;
     height: 2rem !important;
+}
+.self_serverTrackers {
+    list-style-type: none;
 }
 @media only screen and (width < 992px) {
     .nav-link {
