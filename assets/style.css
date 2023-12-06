@@ -1,0 +1,115 @@
+nav {
+    transition: all 0.12s linear;
+    background: #00000071;
+}
+#section_welcome, #section_contact, #section_servers {
+    background: url(./images/sg_mix.jpg) #00000071;
+}
+.self_discordBtn {
+    background: #7289DA;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.15s linear;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.self_discordBtn:hover {
+    background: #8099f5;
+}
+.self_welcomeAnimationEl {
+    opacity: 0;
+    transition: all 2s ease-in;
+}
+#section_about {
+    background: url(./images/arma.jpg) #00000071;
+}
+#section_arma3 {
+    background: url(./images/arma3.jpg) #00000071;
+}
+#section_cs {
+    background: url(./images/cs.jpeg) #00000071;
+}
+#section_warthunder {
+    background: url(./images/warthunder.jpg) #00000071;
+}
+#section_welcome, #section_about, #section_arma3, #section_cs, #section_warthunder, #section_contact, #section_servers {
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 20px;
+}
+#wt_squadron {
+    user-select: none;
+    font-size: x-large;
+    font-family: monospace;
+    border: 1px solid #3d444b;
+    border-radius: 6px;
+    padding: 10px;
+    color: #c7c7c7;
+    text-decoration: none;
+    transition: all 0.12s linear;
+}
+#wt_squadron:hover {
+    color: #e4e4e4;
+    margin-left: 5px;
+}
+.self_otherGame {
+    display: none;
+}
+.self_otherGame.self_otherActive {
+    display: block;
+}
+button:disabled {
+    opacity: 0 !important;
+}
+#self_discordInfo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+footer {
+    height: 20vh;
+    color: #c2c2c2;
+}
+.self_largeIcon {
+    width: 2rem !important;
+    height: 2rem !important;
+}
+.self_serverTrackers {
+    list-style-type: none;
+}
+@media only screen and (width < 992px) {
+    .nav-link {
+        border: 0px solid #ec1a1a;
+        transition: all 0.07s linear;
+    }
+    .nav-link:hover {
+        padding-left: 10px;
+        border-left: 2px solid #ec1a1a;
+    }
+}
+@media only screen and (width >= 992px) {
+    .nav-link::before {
+        content: '';
+        height: 2px;
+        display: block;
+    }
+    .nav-link::after {
+        content: '';
+        height: 2px;
+        display: block;
+        position: relative;
+        left: 50%;
+        width: 0;
+        background: #ec1a1a;
+        transition: all 0.12s linear;
+    }
+    .nav-link:hover::after {
+        left: 0;
+        width: 100%;
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Strefa Gier</title>
+    <description>Strona polskiej społeczności gamingowej  
+Strefa Gier
+</description>
+    <link>https://strefagier.com.pl/</link>
+    <atom:link href="https://strefagier.com.pl/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 06 Dec 2023 23:41:20 +0000</pubDate>
+    <lastBuildDate>Wed, 06 Dec 2023 23:41:20 +0000</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+  </channel>
+</rss>
