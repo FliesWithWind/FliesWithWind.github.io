@@ -1,9 +1,9 @@
 nav {
     transition: all 0.12s linear;
-    background: #00000071;
 }
+
 #section_welcome, #section_contact, #section_servers {
-    background: url(./images/sg_mix.jpg) #00000071;
+    background: url(./images/sg_mix.webp) #00000071;
 }
 .self_discordBtn {
     background: #7289DA;
@@ -20,16 +20,16 @@ nav {
     transition: all 2s ease-in;
 }
 #section_about {
-    background: url(./images/arma.jpg) #00000071;
+    background: url(./images/arma.webp) #00000071;
 }
 #section_arma3 {
-    background: url(./images/arma3.jpg) #00000071;
+    background: url(./images/arma3.webp) #00000071;
 }
 #section_cs {
-    background: url(./images/cs.jpeg) #00000071;
+    background: url(./images/cs.webp) #00000071;
 }
 #section_warthunder {
-    background: url(./images/warthunder.jpg) #00000071;
+    background: url(./images/warthunder.webp) #00000071;
 }
 #section_welcome, #section_about, #section_arma3, #section_cs, #section_warthunder, #section_contact, #section_servers {
     background-blend-mode: multiply;
@@ -41,6 +41,21 @@ nav {
     box-sizing: border-box;
     padding: 20px;
 }
+
+/* iOS Safari fallback: background-attachment: fixed is not supported; use solid color */
+@supports not (-webkit-touch-callout: none) {
+    #section_welcome, #section_about, #section_arma3, #section_cs,
+    #section_warthunder, #section_contact, #section_servers {
+        /* native desktop — fixed works fine */
+    }
+}
+@supports (-webkit-touch-callout: none) {
+    #section_welcome, #section_about, #section_arma3, #section_cs,
+    #section_warthunder, #section_contact, #section_servers {
+        background-attachment: scroll;
+    }
+}
+
 #wt_squadron {
     user-select: none;
     font-size: x-large;
@@ -63,7 +78,9 @@ nav {
     display: block;
 }
 button:disabled {
-    opacity: 0 !important;
+    opacity: 0.3 !important;
+    cursor: default;
+    pointer-events: none;
 }
 #self_discordInfo {
     position: absolute;
@@ -84,32 +101,25 @@ footer {
 }
 @media only screen and (width < 992px) {
     .nav-link {
-        border: 0px solid #ec1a1a;
+        border-left: 2px solid transparent;
         transition: all 0.07s linear;
     }
     .nav-link:hover {
         padding-left: 10px;
-        border-left: 2px solid #ec1a1a;
+        border-left-color: #ec1a1a;
     }
 }
 @media only screen and (width >= 992px) {
-    .nav-link::before {
-        content: '';
-        height: 2px;
-        display: block;
-    }
     .nav-link::after {
         content: '';
-        height: 2px;
         display: block;
         position: relative;
-        left: 50%;
         width: 0;
         background: #ec1a1a;
+        height: 2px;
         transition: all 0.12s linear;
     }
     .nav-link:hover::after {
-        left: 0;
         width: 100%;
     }
 }
