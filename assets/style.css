@@ -1,115 +1,546 @@
-nav {
-    transition: all 0.12s linear;
-    background: #00000071;
+/* ============================================================
+   Strefa Gier — Custom CSS (layers on top of Bootstrap 5 dark)
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #14141d;
+  --color-surface-hover: #1c1c28;
+  --color-accent: #e63946;
+  --color-accent-dark: #c92a35;
+  --color-accent-soft: rgba(230, 57, 70, 0.12);
+  --color-text: #f0f0f0;
+  --color-text-muted: #a0a0b0;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --transition-fast: 150ms ease;
+  --transition-med: 300ms ease;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
-#section_welcome, #section_contact, #section_servers {
-    background: url(./images/sg_mix.jpg) #00000071;
+
+/* ---------- Global Resets ---------- */
+body {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
 }
-.self_discordBtn {
-    background: #7289DA;
-    text-decoration: none;
-    color: #fff;
-    transition: all 0.15s linear;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 600;
 }
-.self_discordBtn:hover {
-    background: #8099f5;
+
+a {
+  text-decoration: none;
 }
-.self_welcomeAnimationEl {
-    opacity: 0;
-    transition: all 2s ease-in;
+
+/* ---------- Section Backgrounds ---------- */
+#section_welcome, #section_contact {
+  background: url(./images/sg_mix.webp) #00000071 center top / cover no-repeat;
 }
 #section_about {
-    background: url(./images/arma.jpg) #00000071;
+  background: url(./images/arma.webp) #00000071 center top / cover no-repeat;
 }
 #section_arma3 {
-    background: url(./images/arma3.jpg) #00000071;
+  background: url(./images/arma3.webp) #00000071 center top / cover no-repeat;
 }
 #section_cs {
-    background: url(./images/cs.jpeg) #00000071;
+  background: url(./images/cs.webp) #00000071 center top / cover no-repeat;
 }
 #section_warthunder {
-    background: url(./images/warthunder.jpg) #00000071;
+  background: url(./images/warthunder.webp) #00000071 center top / cover no-repeat;
 }
-#section_welcome, #section_about, #section_arma3, #section_cs, #section_warthunder, #section_contact, #section_servers {
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: top;
-    min-height: 100vh;
-    box-sizing: border-box;
-    padding: 20px;
+#section_serwery {
+  background: url(./images/arma.webp) #00000071 center top / cover no-repeat;
 }
-#wt_squadron {
-    user-select: none;
-    font-size: x-large;
-    font-family: monospace;
-    border: 1px solid #3d444b;
-    border-radius: 6px;
-    padding: 10px;
-    color: #c7c7c7;
-    text-decoration: none;
-    transition: all 0.12s linear;
+
+#section_welcome, #section_about, #section_arma3,
+#section_cs, #section_warthunder, #section_serwery, #section_contact {
+  position: relative;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 20px;
 }
-#wt_squadron:hover {
-    color: #e4e4e4;
-    margin-left: 5px;
+
+/* Dark gradient overlay for readability */
+#section_welcome::before, #section_about::before,
+#section_arma3::before, #section_cs::before,
+#section_warthunder::before, #section_serwery::before, #section_contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 0;
+  pointer-events: none;
 }
-.self_otherGame {
-    display: none;
+
+/* Lift content above overlay */
+#section_welcome > *, #section_about > *,
+#section_arma3 > *, #section_cs > *,
+#section_warthunder > *, #section_serwery > *, #section_contact > * {
+  position: relative;
+  z-index: 1;
 }
-.self_otherGame.self_otherActive {
+
+/* iOS Safari fallback: background-attachment: fixed not supported */
+@supports (-webkit-touch-callout: none) {
+  #section_welcome, #section_about, #section_arma3,
+  #section_cs, #section_warthunder, #section_serwery, #section_contact {
+    background-attachment: scroll;
+  }
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  transition: all var(--transition-med);
+}
+
+.navbar {
+  background: rgba(10, 10, 15, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Scrolled state (toggled via JS) */
+.navbar.bg-body-secondary {
+  background: rgba(10, 10, 15, 0.95) !important;
+  box-shadow: var(--shadow-card);
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text) !important;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-text-muted) !important;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text) !important;
+}
+
+/* Desktop: underline animation */
+@media (min-width: 992px) {
+  .nav-link::after {
+    content: '';
     display: block;
-}
-button:disabled {
-    opacity: 0 !important;
-}
-#self_discordInfo {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    left: 0;
+    width: 0;
+    background: var(--color-accent);
+    height: 2px;
+    transition: width var(--transition-med);
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
 }
+
+/* Mobile: left border accent */
+@media (max-width: 991px) {
+  .nav-link {
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
+    transition: all var(--transition-fast);
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    border-left-color: var(--color-accent);
+    padding-left: 1rem;
+    color: var(--color-text) !important;
+  }
+
+  .navbar-collapse {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--color-border);
+  }
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin-top: 0.4em;
+  border-radius: 2px;
+}
+
+.text-center .section-title::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Content Cards ---------- */
+.content-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.content-card h5 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.content-card p,
+.content-card .text-muted {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ---------- CTA Buttons ---------- */
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff !important;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.btn-accent:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.3);
+  color: #fff !important;
+}
+
+.btn-outline-accent {
+  background: transparent;
+  color: var(--color-accent) !important;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.4rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.btn-outline-accent:hover {
+  background: var(--color-accent-soft);
+  transform: translateY(-2px);
+  color: var(--color-accent) !important;
+}
+
+/* ---------- Discord Button (brand color preserved) ---------- */
+.self_discordBtn {
+  background: #7289da;
+  color: #fff !important;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+.self_discordBtn:hover {
+  background: #8099f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(114, 137, 218, 0.3);
+  color: #fff !important;
+}
+
+/* ---------- Welcome Animation ---------- */
+.self_welcomeAnimationEl {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.self_welcomeAnimationEl.visible {
+  opacity: 1;
+}
+
+/* ---------- Fade-in on Scroll ---------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- War Thunder Squadron Link ---------- */
+#wt_squadron {
+  user-select: none;
+  font-size: x-large;
+  font-family: monospace;
+  border: 1px solid #3d444b;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  color: #c7c7c7;
+  transition: all var(--transition-fast);
+  display: inline-block;
+}
+
+#wt_squadron:hover {
+  color: #e4e4e4;
+  margin-left: 5px;
+  border-color: #555;
+}
+
+/* ---------- Contact Carousel ---------- */
+.self_otherGame {
+  display: none;
+}
+
+.self_otherGame.self_otherActive {
+  display: block;
+}
+
+button:disabled {
+  opacity: 0.3 !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+#self_discordInfo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/* ---------- Server Cards (serwery.html) ---------- */
+.server-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+  margin-bottom: 1.5rem;
+}
+
+.server-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.server-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.server-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.server-card-header h5 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  flex: 1;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.status-badge.online {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-badge.offline {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.server-card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.server-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.server-info span {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.server-info strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.server-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.server-badges img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.server-card-footer {
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-copy {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-copy:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.btn-copy.copied {
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+/* Server grid layout */
+.server-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .server-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Footer ---------- */
 footer {
-    height: 20vh;
-    color: #c2c2c2;
+  height: 20vh;
+  color: #c2c2c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* ---------- Utility ---------- */
 .self_largeIcon {
-    width: 2rem !important;
-    height: 2rem !important;
+  width: 2rem !important;
+  height: 2rem !important;
 }
+
 .self_serverTrackers {
-    list-style-type: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
-@media only screen and (width < 992px) {
-    .nav-link {
-        border: 0px solid #ec1a1a;
-        transition: all 0.07s linear;
-    }
-    .nav-link:hover {
-        padding-left: 10px;
-        border-left: 2px solid #ec1a1a;
-    }
-}
-@media only screen and (width >= 992px) {
-    .nav-link::before {
-        content: '';
-        height: 2px;
-        display: block;
-    }
-    .nav-link::after {
-        content: '';
-        height: 2px;
-        display: block;
-        position: relative;
-        left: 50%;
-        width: 0;
-        background: #ec1a1a;
-        transition: all 0.12s linear;
-    }
-    .nav-link:hover::after {
-        left: 0;
-        width: 100%;
-    }
+
+/* ---------- Responsive Tweaks ---------- */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 1.5rem;
+  }
+
+  #section_welcome, #section_about, #section_arma3,
+  #section_cs, #section_warthunder, #section_serwery, #section_contact {
+    padding: 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title::after {
+    width: 40px;
+  }
 }
